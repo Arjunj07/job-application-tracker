@@ -1,0 +1,106 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  min-width: 240px;
+  min-height: 100vh;
+  justify-content: flex-start;
+  padding: 20px 16px;
+  box-sizing: border-box;
+  border-right: 1px solid var(--border-color, #e2e8f0);
+  background-color: var(--card-bg, #ffffff);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px 16px 8px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  margin-bottom: 20px;
+}
+
+.sidebar-header p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color, #0f172a);
+}
+
+.sidebar-nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.add-application {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-application:hover {
+  background-color: #1d4ed8;
+}
+
+.add-application:active {
+  transform: scale(0.98);
+}
+
+.dashboard-button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.dashboard-button li {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboard-button a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-color, #0f172a);
+  padding: 10px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dashboard-button a:hover {
+  background-color: rgba(148, 163, 184, 0.15);
+}
+
+.dashboard-button a.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dashboard-button a.active svg {
+  color: #ffffff;
+}

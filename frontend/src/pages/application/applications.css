@@ -1,0 +1,96 @@
+.applications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.applications-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color, #0f172a);
+}
+
+.top-div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  padding: 6px 12px;
+  min-width: 200px;
+  height: 36px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-box:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.search-box .search-icon {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text-color, #0f172a);
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* Filter Pill Button Boxes */
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 36px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-color, #1e293b);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: #cbd5e1;
+  background-color: var(--card-bg, #ffffff);
+}
+
+.filter-badge-btn {
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.chevron-icon {
+  color: #64748b;
+  flex-shrink: 0;
+}
