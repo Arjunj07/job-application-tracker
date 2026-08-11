@@ -1,0 +1,132 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at center, #1b172a 0%, #0b0a10 100%);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  min-height: 560px;
+  background-color: #141220;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #28243c;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+/* Sliding Image Panel */
+.sliding-image-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+  transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.sliding-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mode: Login -> Image on LEFT (0%) */
+.auth-card.mode-login .sliding-image-panel {
+  transform: translateX(0%);
+}
+
+/* Mode: Signup -> Image on RIGHT (100%) */
+.auth-card.mode-signup .sliding-image-panel {
+  transform: translateX(100%);
+}
+
+/* Form Panels */
+.form-panel {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.4s ease 0.15s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+/* Signup Panel is on the LEFT (0%) */
+.signup-panel {
+  left: 0;
+  padding: 36px 40px;
+}
+
+/* Login Panel is on the RIGHT (50%) */
+.login-panel {
+  left: 50%;
+  padding: 44px 40px;
+}
+
+/* Visibility toggles based on mode */
+.auth-card.mode-login .signup-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-30px);
+}
+
+.auth-card.mode-login .login-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.auth-card.mode-signup .signup-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.auth-card.mode-signup .login-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(30px);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .auth-card {
+    flex-direction: column;
+    min-height: auto;
+    max-width: 440px;
+  }
+  .sliding-image-panel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    transform: none !important;
+  }
+  .form-panel {
+    position: relative;
+    width: 100%;
+    left: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    padding: 28px 24px;
+  }
+  .auth-card.mode-login .signup-panel,
+  .auth-card.mode-signup .login-panel {
+    display: none;
+  }
+}
