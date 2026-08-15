@@ -83,7 +83,10 @@ job-application-tracker/
     ├── DATABASE_DESIGN.md
     ├── SYSTEM_DESIGN.md
     ├── API_SPECIFICATION.md
-    └── DEVELOPMENT_PLAN.md
+    ├── DEVELOPMENT_PLAN.md
+    └── ui-references/        # UI Design Specifications & Reference Mockups
+        ├── README.md
+        └── UI_DESIGN_SPECIFICATION.md
 ```
 
 ---

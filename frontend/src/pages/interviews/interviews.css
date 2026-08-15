@@ -1,0 +1,589 @@
+/* ==========================================================================
+   Interviews Screen Styling - Pixel-Perfect to UI_REF.png
+   ========================================================================== */
+
+.interviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   1. Header & Filter Tabs Row
+   -------------------------------------------------------------------------- */
+.interviews-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.interviews-left-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.interviews-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color, #0f172a);
+  letter-spacing: -0.01em;
+}
+
+.interviews-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.interviews-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.interviews-tab-btn:hover {
+  color: var(--text-color, #0f172a);
+  background-color: var(--bg-color, #f1f5f9);
+}
+
+.interviews-tab-btn.active {
+  color: var(--text-color, #0f172a);
+  font-weight: 600;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.interviews-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Calendar Filter Button */
+.calendar-dropdown-wrap {
+  position: relative;
+}
+
+.calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color, #1e293b);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.calendar-btn:hover {
+  border-color: #cbd5e1;
+}
+
+.calendar-icon {
+  color: #64748b;
+}
+
+.calendar-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 140px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  z-index: 50;
+}
+
+.calendar-menu-item {
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: var(--text-color, #334155);
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.calendar-menu-item:hover {
+  background-color: var(--bg-color, #f1f5f9);
+}
+
+.calendar-menu-item.selected {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* Add Interview Primary Button */
+.schedule-interview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary, #2563eb);
+  color: var(--primary-foreground, #ffffff);
+  border: none;
+  border-radius: 6px;
+  padding: 0 14px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.schedule-interview-btn:hover {
+  background-color: var(--primary-hover, #1d4ed8);
+}
+
+/* --------------------------------------------------------------------------
+   2. Interviews Grid Layout (Matches UI_REF.png)
+   -------------------------------------------------------------------------- */
+.interviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.interview-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.interview-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Header */
+.interview-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.interview-card-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-company-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.card-position-name {
+  margin: 0;
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* 3-dots Menu */
+.interview-card-menu-wrap {
+  position: relative;
+}
+
+.card-more-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-more-btn:hover {
+  color: var(--text-color, #0f172a);
+  background-color: var(--bg-color, #f1f5f9);
+}
+
+.card-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 2px);
+  right: 0;
+  min-width: 140px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  padding: 4px;
+  z-index: 40;
+}
+
+.card-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-color, #334155);
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.card-menu-item:hover {
+  background-color: var(--bg-color, #f1f5f9);
+}
+
+.card-menu-item.delete:hover {
+  background-color: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+}
+
+/* Card Body Rows matching UI_REF.png */
+.interview-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-color, #f1f5f9);
+}
+
+.interview-field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12.5px;
+}
+
+.field-label {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.field-val {
+  color: var(--text-color, #0f172a);
+  font-weight: 500;
+}
+
+.field-val.highlight {
+  font-weight: 600;
+  color: var(--text-color, #0f172a);
+}
+
+.meeting-link-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.meeting-link-anchor:hover {
+  text-decoration: underline;
+}
+
+.meeting-link-placeholder {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.interview-status-row {
+  margin-top: 6px;
+}
+
+.interview-status-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Empty State
+   -------------------------------------------------------------------------- */
+.interviews-empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 56px 20px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px dashed var(--border-color, #e2e8f0);
+  border-radius: 8px;
+}
+
+.empty-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--bg-color, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  margin-bottom: 14px;
+}
+
+.empty-title {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.empty-subtitle {
+  margin: 0 0 18px 0;
+  font-size: 13px;
+  color: #64748b;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   4. Modals
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.modal-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color, #334155);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: 6px;
+  background-color: var(--bg-color, #f8fafc);
+  font-size: 13px;
+  color: var(--text-color, #0f172a);
+  outline: none;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  background-color: var(--card-bg, #ffffff);
+}
+
+.form-group input.error {
+  border-color: #dc2626;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-color, #f1f5f9);
+}
+
+.btn-cancel {
+  background-color: transparent;
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--text-color, #334155);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-submit {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Delete Modal */
+.delete-modal-box {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.delete-title {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.delete-desc {
+  margin: 0 0 16px 0;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.delete-actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .interviews-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
