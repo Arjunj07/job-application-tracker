@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Analytics Screen Styling - Pixel-Perfect to UI_REF.png
+   ========================================================================== */
+
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.analytics-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.analytics-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color, #0f172a);
+}
+
+/* Metrics Row */
+.analytics-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.metric-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* 2x2 Charts Grid */
+.analytics-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.chart-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chart-card-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+/* Line Chart */
+.line-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analytics-svg-line {
+  width: 100%;
+  height: 140px;
+  overflow: visible;
+}
+
+.chart-x-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #94a3b8;
+  padding-top: 4px;
+}
+
+/* Donut Chart */
+.donut-chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.donut-visual {
+  width: 130px;
+  height: 130px;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-color, #334155);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Funnel Chart */
+.funnel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.funnel-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 50px;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+}
+
+.funnel-stage-name {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.funnel-bar-track {
+  background-color: var(--bg-color, #f1f5f9);
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.funnel-bar-fill {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  transition: width 0.3s ease;
+}
+
+.funnel-rate-text {
+  font-weight: 600;
+  color: #16a34a;
+  text-align: right;
+}
+
+/* Source Bars */
+.source-bars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.source-bars-area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 130px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  padding-bottom: 6px;
+}
+
+.source-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.source-bar-pair {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100px;
+}
+
+.source-bar {
+  width: 14px;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.3s ease;
+}
+
+.source-bar.applied-bar {
+  background-color: #2563eb;
+}
+
+.source-bar.interview-bar {
+  background-color: #0284c7;
+}
+
+.source-bar-label {
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.source-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .analytics-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .analytics-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

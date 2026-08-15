@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Companies Screen Styling - Pixel-Perfect to UI_REF.png
+   ========================================================================== */
+
+.companies-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.companies-top-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.companies-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color, #0f172a);
+}
+
+/* Summary Cards (Top Row) */
+.companies-summary-cards {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.summary-chip-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 12px 18px;
+  min-width: 200px;
+  flex: 1;
+}
+
+.chip-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.chip-badge.blue {
+  background-color: #0284c7;
+}
+
+.chip-badge.orange {
+  background-color: #ea580c;
+}
+
+.chip-badge.cyan {
+  background-color: #0891b2;
+}
+
+.chip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chip-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.chip-sub {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* Action Bar */
+.companies-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.companies-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  padding: 6px 12px;
+  min-width: 240px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.companies-search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  color: var(--text-color, #0f172a);
+  font-family: inherit;
+}
+
+.add-company-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary, #2563eb);
+  color: var(--primary-foreground, #ffffff);
+  border: none;
+  border-radius: 6px;
+  padding: 0 14px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.add-company-btn:hover {
+  background-color: var(--primary-hover, #1d4ed8);
+}
+
+/* Table */
+.companies-table-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.companies-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.companies-table thead {
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.companies-table th {
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.company-row {
+  border-bottom: 1px solid var(--border-color, #f1f5f9);
+  transition: background-color 0.12s ease;
+}
+
+.company-row:hover {
+  background-color: var(--bg-color, #f8fafc);
+}
+
+.companies-table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+}
+
+.company-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-avatar-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.company-name-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color, #0f172a);
+}
+
+.meta-text {
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.status-pill-sub {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #dcfce7;
+  color: #16a34a;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.count-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.companies-empty-row {
+  text-align: center;
+  padding: 48px 16px !important;
+}
+
+.empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.empty-icon {
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.empty-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+}
+
+.empty-subtitle {
+  margin: 0 0 16px 0;
+  font-size: 13px;
+  color: #64748b;
+  max-width: 400px;
+}

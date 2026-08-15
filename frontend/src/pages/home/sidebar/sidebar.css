@@ -1,106 +1,138 @@
-.sidebar {
+/* ==========================================================================
+   Sidebar Styling - Pixel-Perfect to UI_REF.png
+   ========================================================================== */
+
+.app-sidebar {
   display: flex;
   flex-direction: column;
-  width: 240px;
-  min-width: 240px;
+  width: 220px;
+  min-width: 220px;
   min-height: 100vh;
-  justify-content: flex-start;
-  padding: 20px 16px;
+  padding: 20px 14px;
   box-sizing: border-box;
-  border-right: 1px solid var(--border-color, #e2e8f0);
   background-color: var(--card-bg, #ffffff);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  border-right: 1px solid var(--border-color, #e2e8f0);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-.sidebar-header {
+/* Brand Header */
+.sidebar-brand-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 8px 16px 8px;
-  border-bottom: 1px solid var(--border-color, #e2e8f0);
-  margin-bottom: 20px;
+  gap: 10px;
+  padding: 4px 8px 16px 8px;
 }
 
-.sidebar-header p {
+.brand-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: rgba(37, 99, 235, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-title {
   font-size: 18px;
   font-weight: 700;
-  margin: 0;
   color: var(--text-color, #0f172a);
+  letter-spacing: -0.02em;
 }
 
-.sidebar-nav-section {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/* Add Application Primary Button */
+.sidebar-action-wrap {
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.sidebar-add-btn {
   width: 100%;
-}
-
-.add-application {
-  background-color: #2563eb;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
+  background-color: var(--primary, #2563eb);
+  color: var(--primary-foreground, #ffffff);
+  border: none;
   border-radius: 8px;
   padding: 10px 14px;
-  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  font-family: inherit;
 }
 
-.add-application:hover {
-  background-color: #1d4ed8;
+.sidebar-add-btn:hover {
+  background-color: var(--primary-hover, #1d4ed8);
 }
 
-.add-application:active {
+.sidebar-add-btn:active {
   transform: scale(0.98);
 }
 
-.dashboard-button {
+/* Navigation List */
+.sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  flex: 1;
+}
+
+.sidebar-nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar-nav-list li {
   width: 100%;
 }
 
-.dashboard-button li {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.dashboard-button a {
+.sidebar-nav-link {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: var(--text-color, #0f172a);
-  padding: 10px 12px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 14px;
-  font-weight: 500;
+  padding: 9px 12px;
   border-radius: 8px;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #64748b;
+  transition: all 0.15s ease;
 }
 
-.dashboard-button a:hover {
-  background-color: rgba(148, 163, 184, 0.15);
+.sidebar-nav-link .nav-icon {
+  color: #64748b;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
 }
 
-.dashboard-button a.active {
-  background-color: #2563eb;
-  color: #ffffff;
+.sidebar-nav-link:hover {
+  color: var(--text-color, #0f172a);
+  background-color: var(--bg-color, #f1f5f9);
+}
+
+.sidebar-nav-link:hover .nav-icon {
+  color: var(--text-color, #0f172a);
+}
+
+/* Active Link matching UI_REF.png */
+.sidebar-nav-link.active {
+  background-color: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
   font-weight: 600;
 }
 
-.dashboard-button a.active svg {
-  color: #ffffff;
+.sidebar-nav-link.active .nav-icon {
+  color: #2563eb;
 }

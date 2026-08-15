@@ -3,6 +3,13 @@ import AuthPage from "./pages/Auth/AuthPage";
 import Dashboard from "./pages/dashboard/dashboard";
 import Layout from "./components/layout";
 import Applications from "./pages/application/applications";
+import Interviews from "./pages/interviews/interviews";
+import Tasks from "./pages/tasks/tasks";
+import Companies from "./pages/companies/companies";
+import Contacts from "./pages/contacts/contacts";
+import Documents from "./pages/documents/documents";
+import Analytics from "./pages/analytics/analytics";
+import Settings from "./pages/settings/settings";
 
 function App() {
   return (
@@ -14,13 +21,13 @@ function App() {
           <Route path="/home" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/applications" element={<Applications />} />
-          <Route path="/interviews" element={<Dashboard />} />
-          <Route path="/tasks" element={<Dashboard />} />
-          <Route path="/companies" element={<Dashboard />} />
-          <Route path="/contacts" element={<Dashboard />} />
-          <Route path="/documents" element={<Dashboard />} />
-          <Route path="/analytics" element={<Dashboard />} />
-          <Route path="/settings" element={<Dashboard />} />
+          <Route path="/interviews" element={<Interviews />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/companies" element={<Companies />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/documents" element={<Documents />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/settings" element={<Settings />} />
         </Route>
       </Routes>
     </>
